@@ -1,0 +1,12 @@
+<div class="text-center">
+  <h1 class="display-4 fw-bold">CHAT</h1>
+  <p class="lead">This is a simple chat application. built with rails as a backend. and rails + htmx as a frontend.</p>
+</div>
+
+<div class="messages-box">
+  <% @messages.each do |message| %>
+    <p><%= message.content %></p>
+  <% end %>
+</div>
+
+<%= render 'form' %>

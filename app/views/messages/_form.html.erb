@@ -1,0 +1,4 @@
+<%= form_for Message.new do |f| %>
+  <%= f.text_field :content, class: "w-100 py-2 my-2" %>
+  <%= f.submit "Submit", class: "w-100 btn btn-large btn-primary" %>
+<% end %>
