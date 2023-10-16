@@ -2,12 +2,15 @@
 
 # Messages
 class MessagesController < ApplicationController
+  include SessionsHelper
+  before_action :logged_in_user
+
   def index
     @messages = Message.all
   end
 
   def create
-    @message = Message.create!(message_params)
+    @message = current_user.messages.create!(message_params)
     redirect_to messages_path
   end
 

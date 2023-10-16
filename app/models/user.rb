@@ -1,14 +1,12 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
-# Table name: messages
+# Table name: users
 #
 #  id         :integer          not null, primary key
-#  content    :text
+#  username   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class Message < ApplicationRecord
-  belongs_to :user
+class User < ApplicationRecord
+  has_many :messages, dependent: :destroy
 end
